@@ -1,0 +1,61 @@
+* 第二章
+** setq 和 defvar
+1，这两个变量都是定义全局变量
+2,setq如果在之前声明过变量后面又声明了一个，后者会把前者覆盖掉，且不能设置变量说明。
+defvar，不会覆盖之前已声明的变量，且可以设置变量说明 
+比如：(defvar foo "what" "this is document string") 
+
+** let 和 let* 定义局部变量
+let 和 let* 都可以定义局部变量
+let 定义局部变量只能在 let 范围内定义
+let* 定义的变量可以在整个函数内访问
+
+** lambda 表达式 相当于js中的匿名函数
+#+BEGIN_SRC 直接通过 funcall 的方式来调用
+(funcall
+ (lambda (args)
+   "this is lambda test message"
+   (message "hello nihao %s" args)) "zhangsan")
+
+#+END_SRC
+
+#+BEGIN_SRC 也可以通过 setq先定义一个全局变量，在通过funcalll来调用
+
+(setq test-lambda (lambda (name-arg)
+		    "this is a test lamdba da shi"
+		    (message "this is test lambda %s" name-arg)))
+
+#+END_SRC
+
+** progn 可执行多条语句
+
+** 形参说明
+#+BEGIN_SRC 可先参数
+
+(defun foo (a b &optional c d) (list a b c d))
+(foo 1 2) → (1 2 NIL NIL)
+(foo 1 2 3) → (1 2 3 NIL)
+(foo 1 2 3 4) → (1 2 3 4)
+
+#+END_SRC
+
+#+BEGIN_SRC 剩余形参
+
+(defun format (stream string &rest values) ...)
+
+(defun + (&rest numbers) ...)
+
+#+END_SRC
+
+#+BEGIN_SRC 关键字形参 类似解决像是 jquery $.get 可以传不同的参数
+(defun foo (&key a b c) (list a b c))
+(foo) → (NIL NIL NIL)
+(foo :a 1) → (1 NIL NIL)
+(foo :b 1) → (NIL 1 NIL)
+(foo :c 1) → (NIL NIL 1)
+
+#+END_SRC
+
+
+
+

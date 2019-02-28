@@ -1,0 +1,5 @@
+(point)
+
+(region-beginning)
+
+
