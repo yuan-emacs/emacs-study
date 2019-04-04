@@ -102,3 +102,12 @@
 
 (defun hello-myword ())
 
+;; test
+
+(defun params-test (&optional name)
+  (or name (setq name "zhangsan"))
+  (message "name is %s" name)
+  (message "let up join"))
+
+(params-test)
+(params-test "list")
