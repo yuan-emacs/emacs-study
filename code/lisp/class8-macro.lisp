@@ -50,3 +50,12 @@
 (macroexpand-1 '(do-primes (p 1 23)
 			   (format t "~d " p)))
 
+
+
+;; 还剩下，宏的漏洞和编写宏的宏。生面在学习。
+
+
+
+
+
+
