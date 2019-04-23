@@ -62,11 +62,31 @@
 
 ;; 查询表 alist 和 plist
 
-(defparameter *alist-test* '((cons a 1) (cons b 1) (cons c 1)))
+(defparameter *alist-test* '((A . 1) (B . 1) (C . 1)))
 
 (print *alist-test*)
 
 (assoc 'a *alist-test*)
+(assoc 'b *alist-test*)
+
+(defparameter *alist-test2* '(("A" . 1) ("B" . 2) ("C" . 3)))
+
+(print *alist-test2*)
+;;以下两种都可以加些参数进去
+(cons (cons "D" 4) *ALIst-test2*)
+(acons "D" 5 *alist-test2*)
+
+(setf *alist-test2* (acons "D" 4 *alist-test2*))
+(push (cons "F" 5) *ALIst-test2*)
+
+(assoc "A" *alist-test2* :test #'string=)
+
+(assoc "D" *alist-test2* :test #'string=)
+
+(assoc "F" *alist-test2* :test #'string=)
+
+
+
 
 
 
