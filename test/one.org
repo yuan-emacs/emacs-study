@@ -1,0 +1,35 @@
+* this is org mode test
+#+BEGIN_SRC emacs-lisp
+
+  (setq make-backup-files nil)		
+
+  (setq make-backup-file-name-function nil)
+#+END_SRC
+
+#+BEGIN_SRC 
+
+#+END_SRC
+package-list-packages 查看所有安装的包
+
+此时可以设置 company 一些属性
+customize-group -> company/js2-compay/...
+
+
+find-function  -> nodejs-repl-send-butff
+find-variable: company-prefix
+
+到 info 里面学习内容
+M-x -> info
+
+org-mode
+C-c C-s to schedule item
+C-c C-d t oset deadline of time
+
+C-c a show list
+
+**  nodejs-repl
+M-x
+nodejs-repl-send-butff 把nodejs 全部发送到 nodejs 环境中运行 ，在这里可以绑定一个快捷键
+
+
+
